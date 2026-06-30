@@ -72,35 +72,11 @@ const timeline = [
     icon: GraduationCap,
   },
   {
-    title: "IT & Compliance Software Contributor",
-    org: "Energy Advance",
-    location: "Perth, WA",
-    period: "2024 – Present",
-    description: "Building and maintaining internal compliance software for energy regulatory reporting. Real production team with code reviews, sprints, and live deployments.",
-    icon: Briefcase,
-  },
-  {
     title: "Co-Founder & Lead Developer",
     org: "FiveM Game Server",
     location: "Remote",
-    period: "2019 – 2022",
+    period: "2019 – 2023",
     description: "Built a GTA V multiplayer server from scratch and delivered 50+ commissioned scripts for international clients — self-managed, commercially successful.",
-    icon: Briefcase,
-  },
-  {
-    title: "Customer Service",
-    org: "Bunnings Warehouse",
-    location: "Perth, WA",
-    period: "2023 – 2024",
-    description: "Trade and retail customer support, inventory management in a high-volume environment.",
-    icon: Briefcase,
-  },
-  {
-    title: "Entertainment Host",
-    org: "BattleKart",
-    location: "Perth, WA",
-    period: "2022 – 2023",
-    description: "Operated go-kart entertainment venue software and delivered customer experiences.",
     icon: Briefcase,
   },
   {
@@ -110,15 +86,7 @@ const timeline = [
     period: "2024 – 2025",
     description: "Conducted residential energy compliance assessments using FirstRate5 and NatHERS. Interpreted architectural blueprints, entered design specifications into assessment software, validated outputs, and produced compliance documentation for building approvals.",
     icon: Briefcase,
-  },
-  {
-    title: "Crew Member",
-    org: "Red Rooster",
-    location: "Perth, WA",
-    period: "2020 – 2021",
-    description: "Fast-paced food prep and customer service. Developed time management skills under pressure.",
-    icon: Briefcase,
-  },
+}
 ];
 
 export default function AboutPage() {
