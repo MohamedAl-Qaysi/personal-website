@@ -103,14 +103,6 @@ const projects = [
     status: "completed" as const,
     image: "/images/projects/banking.jpg",
   },
-  {
-    title: "Energy Advance — Compliance Software",
-    description: "Professional engineering role contributing to internal compliance management software for an energy company. Real team, production system, ongoing.",
-    tags: ["Enterprise", "SQL", "Compliance", "Agile"],
-    href: "/projects/energy",
-    status: "live" as const,
-    image: "/images/projects/energy.jpg",
-  },
 ];
 
 export default function HomePage() {
