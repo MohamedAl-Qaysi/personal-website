@@ -37,9 +37,9 @@ export default function ProjectCard({
     <Link
       href={href}
       className="group block rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
-      style={{ background: "rgba(6,28,115,0.4)", border: "1px solid rgba(69,76,122,0.4)", boxShadow: "0 0 0 0 rgba(23,132,242,0)" }}
-      onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 30px rgba(23,132,242,0.15), 0 0 0 1px rgba(23,132,242,0.3)")}
-      onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 0 0 0 rgba(23,132,242,0)")}
+      style={{ background: "rgba(6,28,115,0.4)", border: "1px solid rgba(69,76,122,0.4)", boxShadow: "0 8px 32px rgba(0,0,0,0.45)" }}
+      onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 12px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(23,132,242,0.4)")}
+      onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,0,0,0.45)")}
     >
       {/* Preview area */}
       <div className="relative w-full h-44 overflow-hidden flex items-center justify-center text-5xl"
@@ -50,17 +50,20 @@ export default function ProjectCard({
             src={image}
             alt={title}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         )}
 
-        {/* Dark overlay — always present, stronger on images */}
-        <div className="absolute inset-0"
-          style={{ background: image ? "rgba(7,19,74,0.55)" : "rgba(7,19,74,0.15)" }} />
+        {/* Gradient overlay — only on non-image cards */}
+        {!image && (
+          <div className="absolute inset-0" style={{ background: "rgba(7,19,74,0.15)" }} />
+        )}
 
-        {/* Emoji */}
-        <span className="relative z-10 float drop-shadow-lg">{emoji}</span>
+        {/* Emoji — hidden when image provides the visual */}
+        {!image && (
+          <span className="relative z-10 float drop-shadow-lg">{emoji}</span>
+        )}
 
         {/* Hover overlay */}
         <div

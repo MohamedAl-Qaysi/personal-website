@@ -15,7 +15,7 @@ export default function StreamlyProjectPage() {
       status="Completed — University Project"
       tech={[{ name: "Kotlin" }, { name: "Jetpack Compose" }, { name: "Android SDK" }, { name: "MVVM" }, { name: "Room" }, { name: "Retrofit" }, { name: "Coroutines" }, { name: "Material 3" }]}
       emoji="📱"
-      gradient="linear-gradient(135deg, #1a0033 0%, #2d0052 40%, #0a0e31 100%)"
+      image="/images/projects/streamly2.jpg"
     >
       <section>
         <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-ubuntu)" }}>Overview</h2>

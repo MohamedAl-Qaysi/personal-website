@@ -15,7 +15,7 @@ export default function FiveMProjectPage() {
       status="Completed"
       tech={[{ name: "Lua" }, { name: "MySQL" }, { name: "SQL" }, { name: "FiveM Framework" }, { name: "JavaScript" }, { name: "HTML/CSS (NUI)" }, { name: "Git" }, { name: "Linux" }]}
       emoji="🎮"
-      gradient="linear-gradient(135deg, #1a0a02 0%, #2d1a05 40%, #0a0e31 100%)"
+      image="/images/projects/fivem2.jpg"
     >
       <section>
         <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-ubuntu)" }}>Overview</h2>

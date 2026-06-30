@@ -15,7 +15,7 @@ export default function EnergyProjectPage() {
       status="Ongoing Employment"
       tech={[{ name: "Web App" }, { name: "SQL" }, { name: "Enterprise Stack" }, { name: "Agile/Scrum" }, { name: "Git" }, { name: "Code Reviews" }]}
       emoji="⚡"
-      gradient="linear-gradient(135deg, #1a1000 0%, #2d1f00 40%, #0a0e31 100%)"
+      image="/images/projects/energy2.jpg"
     >
       <section>
         <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-ubuntu)" }}>Overview</h2>

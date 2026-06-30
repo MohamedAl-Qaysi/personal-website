@@ -73,53 +73,43 @@ const techGroups = [
 const projects = [
   {
     title: "FiveM Server & 50+ Client Scripts",
-    description:
-      "Co-founded a GTA V multiplayer server. Built custom economy systems, game modes, admin tools, and delivered 50+ paid scripts to international clients over 3 years.",
+    description: "Co-founded a GTA V multiplayer server. Built custom economy systems, game modes, admin tools, and delivered 50+ paid scripts to international clients over 3 years.",
     tags: ["Lua", "MySQL", "Game Dev", "Freelance"],
     href: "/projects/fivem",
-    emoji: "🎮",
     status: "completed" as const,
-    gradient: "linear-gradient(135deg, #1a0a02, #2d1a05, #0a0e31)",
+    image: "/images/projects/fivem.jpg",
   },
   {
     title: "SignPal",
-    description:
-      "End-to-end UX project for a sign-language learning app — user research, personas, high-fidelity Figma prototype, and two rounds of usability testing.",
+    description: "End-to-end UX project for a sign-language learning app — user research, personas, high-fidelity Figma prototype, and two rounds of usability testing.",
     tags: ["Figma", "UX Research", "Usability Testing", "WCAG"],
     href: "/projects/signpal",
-    emoji: "🤟",
     status: "completed" as const,
-    gradient: "linear-gradient(135deg, #002a1a, #003d26, #0a0e31)",
+    image: "/images/projects/signpal.jpg",
   },
   {
     title: "Streamly — Android App",
-    description:
-      "Android streaming content discovery app built with Kotlin and Jetpack Compose. Full MVVM architecture with Room and Retrofit.",
+    description: "Android streaming content discovery app built with Kotlin and Jetpack Compose. Full MVVM architecture with Room and Retrofit.",
     tags: ["Kotlin", "Jetpack Compose", "MVVM", "Android"],
     href: "/projects/streamly",
-    emoji: "📱",
     status: "completed" as const,
-    gradient: "linear-gradient(135deg, #1a0033, #2d0052, #0a0e31)",
+    image: "/images/projects/streamly.jpg",
   },
   {
     title: "Eagled Banking System",
-    description:
-      "Full-stack banking management system built with ASP.NET Core MVC. Account management, fund transfers, transaction history, RBAC admin dashboard.",
+    description: "Full-stack banking management system built with ASP.NET Core MVC. Account management, fund transfers, transaction history, RBAC admin dashboard.",
     tags: ["ASP.NET Core", "C#", "MVC", "SQL Server"],
     href: "/projects/banking",
-    emoji: "🏦",
     status: "completed" as const,
-    gradient: "linear-gradient(135deg, #002018, #003a26, #0a0e31)",
+    image: "/images/projects/banking.jpg",
   },
   {
     title: "Energy Advance — Compliance Software",
-    description:
-      "Professional engineering role contributing to internal compliance management software for an energy company. Real team, production system, ongoing.",
+    description: "Professional engineering role contributing to internal compliance management software for an energy company. Real team, production system, ongoing.",
     tags: ["Enterprise", "SQL", "Compliance", "Agile"],
     href: "/projects/energy",
-    emoji: "⚡",
     status: "live" as const,
-    gradient: "linear-gradient(135deg, #1a1000, #2d1f00, #0a0e31)",
+    image: "/images/projects/energy.jpg",
   },
 ];
 

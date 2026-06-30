@@ -15,7 +15,7 @@ export default function SignPalProjectPage() {
       status="Completed — University Project"
       tech={[{ name: "Figma" }, { name: "UX Research" }, { name: "Usability Testing" }, { name: "Personas" }, { name: "Journey Mapping" }, { name: "Wireframing" }, { name: "WCAG" }]}
       emoji="🤟"
-      gradient="linear-gradient(135deg, #002a1a 0%, #003d26 40%, #0a0e31 100%)"
+      image="/images/projects/signpal2.jpg"
     >
       <section>
         <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-ubuntu)" }}>Overview</h2>

@@ -15,7 +15,7 @@ export default function BankingProjectPage() {
       status="Completed — University Project"
       tech={[{ name: "ASP.NET Core" }, { name: "C#" }, { name: "MVC" }, { name: "Entity Framework" }, { name: "SQL Server" }, { name: "ASP.NET Identity" }, { name: "Bootstrap 5" }, { name: "Razor Pages" }]}
       emoji="🏦"
-      gradient="linear-gradient(135deg, #002018 0%, #003a26 40%, #0a0e31 100%)"
+      image="/images/projects/banking2.jpg"
     >
       <section>
         <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-ubuntu)" }}>Overview</h2>

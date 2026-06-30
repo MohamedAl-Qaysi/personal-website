@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import Container from "./Container";
 import { ReactNode } from "react";
@@ -12,6 +13,7 @@ interface ProjectLayoutProps {
   tech: { name: string }[];
   emoji?: string;
   gradient?: string;
+  image?: string;
   children: ReactNode;
 }
 
@@ -19,13 +21,19 @@ export default function ProjectLayout({
   title, tagline, role, timeline, status, tech,
   emoji = "💻",
   gradient = "linear-gradient(135deg, #061C73 0%, #07134A 60%, #0A0E31 100%)",
+  image,
   children,
 }: ProjectLayoutProps) {
   return (
     <div className="min-h-screen" style={{ background: "#07134A" }}>
       {/* Hero */}
-      <div style={{ background: gradient, borderBottom: "1px solid rgba(69,76,122,0.3)" }}>
-        <Container className="py-14 sm:py-20">
+      <div className="relative" style={{ borderBottom: "1px solid rgba(69,76,122,0.3)" }}>
+        {image ? (
+          <Image src={image} alt={title} fill className="object-cover" priority />
+        ) : null}
+        {/* Background — image or gradient */}
+        <div className="absolute inset-0" style={{ background: image ? "rgba(0,0,0,0.35)" : gradient }} />
+        <Container className="relative z-10 py-14 sm:py-20">
           <Link href="/projects"
             className="inline-flex items-center gap-2 text-sm mb-8 transition-colors hover:text-white"
             style={{ color: "#858EAD" }}>
