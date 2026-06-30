@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 interface ProjectCardProps {
@@ -11,11 +12,12 @@ interface ProjectCardProps {
   emoji?: string;
   status?: "live" | "completed" | "wip";
   gradient?: string;
+  image?: string;
 }
 
 const statusConfig = {
-  live:      { label: "Live",      color: "#22c55e" },
-  completed: { label: "Completed", color: "#1784F2" },
+  live:      { label: "Live",        color: "#22c55e" },
+  completed: { label: "Completed",   color: "#1784F2" },
   wip:       { label: "In Progress", color: "#f59e0b" },
 };
 
@@ -27,25 +29,43 @@ export default function ProjectCard({
   emoji = "💻",
   status = "completed",
   gradient = "linear-gradient(135deg, #061C73, #0A0E31)",
+  image,
 }: ProjectCardProps) {
   const s = statusConfig[status];
 
   return (
-    <Link href={href} className="group block rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
+    <Link
+      href={href}
+      className="group block rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
       style={{ background: "rgba(6,28,115,0.4)", border: "1px solid rgba(69,76,122,0.4)", boxShadow: "0 0 0 0 rgba(23,132,242,0)" }}
       onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 30px rgba(23,132,242,0.15), 0 0 0 1px rgba(23,132,242,0.3)")}
       onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 0 0 0 rgba(23,132,242,0)")}
     >
       {/* Preview area */}
-      <div
-        className="relative w-full h-44 flex items-center justify-center text-5xl overflow-hidden"
-        style={{ background: gradient }}
-      >
-        <span className="float">{emoji}</span>
+      <div className="relative w-full h-44 overflow-hidden flex items-center justify-center text-5xl"
+        style={!image ? { background: gradient } : undefined}>
+
+        {image && (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        )}
+
+        {/* Dark overlay — always present, stronger on images */}
+        <div className="absolute inset-0"
+          style={{ background: image ? "rgba(7,19,74,0.55)" : "rgba(7,19,74,0.15)" }} />
+
+        {/* Emoji */}
+        <span className="relative z-10 float drop-shadow-lg">{emoji}</span>
+
         {/* Hover overlay */}
         <div
-          className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          style={{ background: "rgba(7,19,74,0.6)", backdropFilter: "blur(4px)" }}
+          className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{ background: "rgba(7,19,74,0.65)", backdropFilter: "blur(4px)" }}
         >
           <span className="flex items-center gap-2 text-sm font-semibold" style={{ color: "#1784F2" }}>
             View Project <ArrowUpRight size={16} />
@@ -55,13 +75,11 @@ export default function ProjectCard({
 
       {/* Content */}
       <div className="p-5">
-        {/* Title row */}
         <div className="flex items-center justify-between gap-3 mb-3">
           <h3 className="font-bold text-white group-hover:text-[#1784F2] transition-colors text-base leading-snug"
             style={{ fontFamily: "var(--font-ubuntu)" }}>
             {title}
           </h3>
-          {/* Status badge */}
           <span className="flex items-center gap-1.5 text-xs font-medium whitespace-nowrap shrink-0" style={{ color: s.color }}>
             <span className="w-2 h-2 rounded-full" style={{ backgroundColor: s.color }} />
             {s.label}

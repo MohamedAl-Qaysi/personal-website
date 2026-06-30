@@ -8,56 +8,49 @@ const techGroups = [
   {
     category: "Languages",
     skills: [
-      { name: "JavaScript", icon: "⚡" }, { name: "TypeScript", icon: "🔷" },
-      { name: "Python",     icon: "🐍" }, { name: "Kotlin",     icon: "📱" },
-      { name: "C#",         icon: "🎯" }, { name: "Java",       icon: "☕" },
-      { name: "PHP",        icon: "🐘" }, { name: "Lua",        icon: "🎮" },
-      { name: "SQL",        icon: "🗄️" },
+      { name: "Lua",        icon: "🎮" }, { name: "Python",     icon: "🐍" },
+      { name: "SQL",        icon: "🗄️" }, { name: "Java",       icon: "☕" },
+      { name: "C",          icon: "⚙️" }, { name: "PHP",        icon: "🐘" },
+      { name: "JavaScript", icon: "⚡" }, { name: "Kotlin",     icon: "📱" },
     ],
   },
   {
-    category: "Web & Frameworks",
+    category: "Web / Frameworks",
     skills: [
-      { name: "Next.js",      icon: "▲" }, { name: "React",        icon: "⚛️" },
-      { name: "ASP.NET Core", icon: "💼" }, { name: "Laravel",      icon: "🌿" },
-      { name: "Tailwind CSS", icon: "💨" }, { name: "Bootstrap",    icon: "🅱️" },
-    ],
-  },
-  {
-    category: "AI Tools (Daily)",
-    skills: [
-      { name: "Claude AI", icon: "🤖" }, { name: "ChatGPT",   icon: "💬" },
-      { name: "Copilot",   icon: "✈️" }, { name: "Cursor AI", icon: "🔮" },
-    ],
-  },
-  {
-    category: "Mobile",
-    skills: [
-      { name: "Android",         icon: "🤖" }, { name: "Jetpack Compose", icon: "🧩" },
-      { name: "Room DB",         icon: "💾" }, { name: "Retrofit",        icon: "🔌" },
+      { name: "Laravel", icon: "🌿" }, { name: "Next.js", icon: "▲"  },
+      { name: "React",   icon: "⚛️" }, { name: "HTML",    icon: "🌐" },
+      { name: "CSS",     icon: "🎨" },
     ],
   },
   {
     category: "Databases",
     skills: [
-      { name: "MySQL",            icon: "🐬" }, { name: "SQLite",           icon: "🗃️" },
-      { name: "SQL Server",       icon: "🏢" }, { name: "Entity Framework", icon: "🔗" },
+      { name: "MySQL",  icon: "🐬" },
+      { name: "SQLite", icon: "🗃️" },
     ],
   },
   {
-    category: "UX & Design",
+    category: "Design & Mobile",
     skills: [
-      { name: "Figma",            icon: "🎨" }, { name: "User Research",    icon: "🔬" },
-      { name: "Usability Testing",icon: "✅" }, { name: "Wireframing",      icon: "✏️" },
-      { name: "WCAG A11y",        icon: "♿" },
+      { name: "Figma",                icon: "🎨" },
+      { name: "Android",              icon: "🤖" },
+      { name: "Accessibility Design", icon: "♿" },
     ],
   },
   {
-    category: "Tools & Platforms",
+    category: "AI Tools",
     skills: [
-      { name: "Git",       icon: "🔀" }, { name: "GitHub",      icon: "🐙" },
-      { name: "VS Code",   icon: "💻" }, { name: "Vercel",      icon: "🚀" },
-      { name: "Postman",   icon: "📮" }, { name: "Android Studio", icon: "🤖" },
+      { name: "Claude",         icon: "🤖" }, { name: "ChatGPT",        icon: "💬" },
+      { name: "Gemini",         icon: "✨" }, { name: "GitHub Copilot", icon: "✈️" },
+      { name: "VS Code AI",     icon: "🔮" },
+    ],
+  },
+  {
+    category: "Dev Tools",
+    skills: [
+      { name: "Git",        icon: "🔀" }, { name: "VS Code",    icon: "💻" },
+      { name: "FiveM API",  icon: "🕹️" }, { name: "FirstRate5", icon: "📊" },
+      { name: "OpenIV",     icon: "🗂️" },
     ],
   },
 ];
