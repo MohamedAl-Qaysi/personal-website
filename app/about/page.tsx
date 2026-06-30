@@ -65,10 +65,10 @@ const techGroups = [
 const timeline = [
   {
     title: "Bachelor of Science — Software Engineering",
-    org: "Murdoch University",
+    org: "Curtin University",
     location: "Perth, WA",
-    period: "2022 – 2026",
-    description: "Final semester. Key units: Software Architecture, Databases, HCI, Mobile Dev, Agile PM.",
+    period: "2024 – Current",
+  description: "Final semester. Key units include Software Architecture, Human Computer Interface, Mobile App Development, Algorithms, Operating Systems, and Capstone Project.",
     icon: GraduationCap,
   },
   {
@@ -104,11 +104,11 @@ const timeline = [
     icon: Briefcase,
   },
   {
-    title: "Bookseller",
-    org: "Campion Education",
+    title: "Energy Assessor Assistant",
+    org: "Energy Advance",
     location: "Perth, WA",
-    period: "2021 – 2022",
-    description: "Educational resource sales and stock management during peak school intake periods.",
+    period: "2024 – 2025",
+    description: "Conducted residential energy compliance assessments using FirstRate5 and NatHERS. Interpreted architectural blueprints, entered design specifications into assessment software, validated outputs, and produced compliance documentation for building approvals.",
     icon: Briefcase,
   },
   {
