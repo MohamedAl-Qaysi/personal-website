@@ -16,28 +16,35 @@ interface TechGridProps {
 
 export default function TechGrid({ groups }: TechGridProps) {
   return (
-    <div className="space-y-10">
+    <div className="space-y-7">
       {groups.map(({ category, skills }) => (
         <div key={category}>
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#454C7A" }}>
+          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#454C7A" }}>
             {category}
           </p>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
+          <div className="flex flex-wrap gap-2">
             {skills.map(({ name, icon }) => (
               <div
                 key={name}
-                className="flex flex-col items-center justify-center gap-2 w-full aspect-square rounded-xl p-2 transition-all duration-200 hover:-translate-y-1 group"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:-translate-y-0.5"
                 style={{
-                  background: "linear-gradient(135deg, rgba(6,28,115,0.6), rgba(10,14,49,0.4))",
-                  border: "1px solid rgba(69,76,122,0.35)",
+                  background: "rgba(6,28,115,0.4)",
+                  border: "1px solid rgba(69,76,122,0.4)",
+                  color: "#858EAD",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 20px rgba(23,132,242,0.2), 0 0 0 1px rgba(23,132,242,0.3)")}
-                onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(23,132,242,0.4)";
+                  e.currentTarget.style.color = "#ffffff";
+                  e.currentTarget.style.boxShadow = "0 0 12px rgba(23,132,242,0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "rgba(69,76,122,0.4)";
+                  e.currentTarget.style.color = "#858EAD";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
               >
-                <span className="text-2xl sm:text-3xl leading-none">{icon}</span>
-                <span className="text-[10px] sm:text-xs font-medium text-center leading-tight group-hover:text-white transition-colors" style={{ color: "#858EAD" }}>
-                  {name}
-                </span>
+                <span className="text-base leading-none">{icon}</span>
+                <span>{name}</span>
               </div>
             ))}
           </div>
