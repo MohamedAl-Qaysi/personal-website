@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --bg:       #07134A;
+  --bg-alt:   #0A0E31;
+  --bg-card:  #061C73;
+  --border:   #454C7A;
+  --accent:   #1784F2;
+  --accent-dk:#103FA1;
+  --muted:    #858EAD;
+  --text:     #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-poppins), "Poppins", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+
+/* ── Gradient animated text ─────────────────────────── */
+@keyframes gradientPan {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: -200% 50%; }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    to right,
+    #1784F2 0%,
+    #858EAD 25%,
+    #ffffff 50%,
+    #858EAD 75%,
+    #1784F2 100%
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientPan 6s linear infinite;
+}
+
+/* ── Orbit animations ────────────────────────────────── */
+@keyframes orbit-cw  { to { transform: rotate(360deg); } }
+@keyframes orbit-ccw { to { transform: rotate(-360deg); } }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.55; }
+}
+
+.orbit-cw  { animation: orbit-cw  linear infinite; }
+.orbit-ccw { animation: orbit-ccw linear infinite; }
+.float     { animation: float 4s ease-in-out infinite; }
+.pulse-glow{ animation: pulse-glow 3s ease-in-out infinite; }
+
+/* ── Fade in ─────────────────────────────────────────── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(32px); } to { opacity:1; transform:translateY(0); } }
+.fade-up { animation: fadeUp 0.6s ease-out both; }
+
+/* ── Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #0A0E31; }
+::-webkit-scrollbar-thumb { background: #1784F2; border-radius: 3px; }
+
+/* ── Cursor (controlled by CursorGlow component) ─────── */
+a, button, [role="button"], label, select, input, textarea { cursor: none; }
+
+/* ── Noise texture overlay (optional, via pseudo) ────── */
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
