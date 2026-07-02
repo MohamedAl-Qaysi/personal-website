@@ -1,17 +1,90 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Container from "@/components/Container";
 import SectionHeader from "@/components/SectionHeader";
 import Button from "@/components/Button";
-import { Send, MapPin, Mail, ArrowRight } from "lucide-react";
+import { Send, MapPin, Mail, ArrowRight, ChevronDown } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
+
+const ENQUIRY_OPTIONS = [
+  "Graduate Role / Internship",
+  "Freelance Project",
+  "Collaboration",
+  "General Enquiry",
+];
+
+function CustomSelect({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative w-full">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="w-full flex items-center justify-between text-left text-sm px-4 py-3 rounded-xl transition-colors duration-200"
+        style={{
+          background: "rgba(6,28,115,0.3)",
+          border: `1px solid ${open ? "rgba(23,132,242,0.5)" : "rgba(69,76,122,0.5)"}`,
+          color: value ? "#ffffff" : "#454C7A",
+        }}
+      >
+        <span>{value || "Select type…"}</span>
+        <ChevronDown
+          size={15}
+          style={{
+            color: "#858EAD",
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+            transition: "transform 0.2s",
+          }}
+        />
+      </button>
+
+      {open && (
+        <div
+          className="absolute left-0 right-0 top-full mt-1 rounded-xl overflow-hidden z-50"
+          style={{
+            background: "#0A1A5C",
+            border: "1px solid rgba(23,132,242,0.25)",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.5)",
+          }}
+        >
+          {ENQUIRY_OPTIONS.map((opt) => (
+            <button
+              key={opt}
+              type="button"
+              onClick={() => { onChange(opt); setOpen(false); }}
+              className="w-full text-left text-sm px-4 py-3 transition-colors duration-150"
+              style={{
+                color: value === opt ? "#ffffff" : "#858EAD",
+                background: value === opt ? "rgba(23,132,242,0.15)" : "transparent",
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(23,132,242,0.1)"; (e.currentTarget as HTMLElement).style.color = "#ffffff"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = value === opt ? "rgba(23,132,242,0.15)" : "transparent"; (e.currentTarget as HTMLElement).style.color = value === opt ? "#ffffff" : "#858EAD"; }}
+            >
+              {opt}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
   }
 
@@ -94,9 +167,9 @@ export default function ContactPage() {
               <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: "#454C7A" }}>Online</p>
               <div className="flex gap-3">
                 {[
-                  { href: "https://github.com/MohamedAl-Qaysi",                 label: "GitHub",   icon: GithubIcon },
-                  { href: "https://www.linkedin.com/in/mohamed-al-qaysi-b42a162b6",      label: "LinkedIn", icon: LinkedinIcon },
-                  { href: "mailto:mohamed.alqaysi3@gmail.com",           label: "Email",    icon: Mail },
+                  { href: "https://github.com/MohamedAl-Qaysi",                            label: "GitHub",   icon: GithubIcon },
+                  { href: "https://www.linkedin.com/in/mohamed-al-qaysi-b42a162b6",         label: "LinkedIn", icon: LinkedinIcon },
+                  { href: "mailto:mohamed.alqaysi3@gmail.com",                              label: "Email",    icon: Mail },
                 ].map(({ href, label, icon: Icon }) => (
                   <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                     aria-label={label}
@@ -114,7 +187,7 @@ export default function ContactPage() {
               <ul className="space-y-2 text-sm" style={{ color: "#858EAD" }}>
                 {[
                   "Graduate software engineering roles",
-                  "Internships (paid)",
+                  "Internships",
                   "Freelance web development",
                   "Contract projects",
                   "Collaborations on interesting tech",
@@ -152,13 +225,10 @@ export default function ContactPage() {
 
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#858EAD" }}>Enquiry Type *</label>
-                    <select name="subject" required value={form.subject} onChange={handleChange} style={{ ...inputStyle, appearance: "none" as React.CSSProperties["appearance"] }}>
-                      <option value="" disabled>Select type…</option>
-                      <option value="Graduate Role">Graduate Role / Internship</option>
-                      <option value="Freelance Project">Freelance Project</option>
-                      <option value="Collaboration">Collaboration</option>
-                      <option value="General Enquiry">General Enquiry</option>
-                    </select>
+                    <CustomSelect
+                      value={form.subject}
+                      onChange={(v) => setForm((p) => ({ ...p, subject: v }))}
+                    />
                   </div>
 
                   <div>
@@ -172,7 +242,7 @@ export default function ContactPage() {
                     <p className="text-sm text-red-400">Something went wrong. Please email me directly at mohamed.alqaysi3@gmail.com</p>
                   )}
 
-                  <Button type="submit" size="lg" fullWidth disabled={status === "sending"}>
+                  <Button type="submit" size="lg" fullWidth disabled={status === "sending" || !form.subject}>
                     {status === "sending" ? "Sending…" : <><Send size={16} /> Send Message</>}
                   </Button>
 
