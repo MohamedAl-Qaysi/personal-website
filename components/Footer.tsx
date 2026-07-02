@@ -39,11 +39,11 @@ export default function Footer() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a href="https://github.com/HyperGFX" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+            <a href="https://github.com/MohamedAl-Qaysi" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
               className="flex items-center justify-center w-9 h-9 rounded-lg transition-all hover:scale-110" style={iconStyle}>
               <GithubIcon width={16} height={16} />
             </a>
-            <a href="https://linkedin.com/in/mohamedalqaysi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+            <a href="https://www.linkedin.com/in/mohamed-al-qaysi-b42a162b6" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
               className="flex items-center justify-center w-9 h-9 rounded-lg transition-all hover:scale-110" style={iconStyle}>
               <LinkedinIcon width={16} height={16} />
             </a>

@@ -94,8 +94,8 @@ export default function ContactPage() {
               <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: "#454C7A" }}>Online</p>
               <div className="flex gap-3">
                 {[
-                  { href: "https://github.com/HyperGFX",                 label: "GitHub",   icon: GithubIcon },
-                  { href: "https://linkedin.com/in/mohamedalqaysi",      label: "LinkedIn", icon: LinkedinIcon },
+                  { href: "https://github.com/MohamedAl-Qaysi",                 label: "GitHub",   icon: GithubIcon },
+                  { href: "https://www.linkedin.com/in/mohamed-al-qaysi-b42a162b6",      label: "LinkedIn", icon: LinkedinIcon },
                   { href: "mailto:mohamed.alqaysi3@gmail.com",           label: "Email",    icon: Mail },
                 ].map(({ href, label, icon: Icon }) => (
                   <a key={label} href={href} target="_blank" rel="noopener noreferrer"

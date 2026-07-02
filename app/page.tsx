@@ -166,11 +166,11 @@ export default function HomePage() {
                   <MapPin size={14} style={{ color: "#858EAD" }} />
                   <span style={{ color: "#858EAD" }}>Perth, WA</span>
                 </span>
-                <a href="https://github.com/HyperGFX" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/MohamedAl-Qaysi" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-1.5 transition-colors hover:text-white" style={{ color: "#858EAD" }}>
                   <GithubIcon width={14} height={14} /> GitHub
                 </a>
-                <a href="https://linkedin.com/in/mohamedalqaysi" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.linkedin.com/in/mohamed-al-qaysi-b42a162b6" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-1.5 transition-colors hover:text-[#1784F2]" style={{ color: "#858EAD" }}>
                   <LinkedinIcon width={14} height={14} /> LinkedIn
                 </a>
