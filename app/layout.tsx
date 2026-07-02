@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CursorGlowClient from "@/components/CursorGlowClient";
+import FloatingContact from "@/components/FloatingContact";
 
 const poppins = Poppins({
   weight: ["400", "500", "600"],
@@ -48,6 +49,7 @@ export default function RootLayout({
         <CursorGlowClient />
         <Navbar />
         <main className="flex-1">{children}</main>
+        <FloatingContact />
         <Footer />
       </body>
     </html>

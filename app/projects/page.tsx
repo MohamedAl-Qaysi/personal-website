@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import SectionHeader from "@/components/SectionHeader";
 import ProjectCard from "@/components/ProjectCard";
+import FadeIn from "@/components/FadeIn";
 
 const projects = [
   {
@@ -56,12 +57,14 @@ export default function ProjectsPage() {
       {/* Grid */}
       <section>
         <Container className="py-14 sm:py-16">
-          <SectionHeader title="All Work" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {projects.map((p) => (
-              <ProjectCard key={p.title} {...p} />
-            ))}
-          </div>
+          <FadeIn>
+            <SectionHeader title="All Work" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {projects.map((p) => (
+                <ProjectCard key={p.title} {...p} />
+              ))}
+            </div>
+          </FadeIn>
         </Container>
       </section>
 
