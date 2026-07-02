@@ -30,12 +30,12 @@ const satisfy = Satisfy({
 export const metadata: Metadata = {
   title: "Mohamed Al-Qaysi — Software Engineer",
   description:
-    "AI-augmented software engineer with 5+ years of real-world development experience — full-stack web, Android, UX, and game systems.",
+    "Software engineer with 5+ years of real-world development experience — full-stack web, Android, UX, and game systems.",
   keywords: ["Mohamed Al-Qaysi", "Software Engineer", "AI Developer", "Full Stack", "Next.js", "Portfolio"],
   authors: [{ name: "Mohamed Al-Qaysi" }],
   openGraph: {
     title: "Mohamed Al-Qaysi — Software Engineer",
-    description: "AI-augmented full-stack developer, co-founder, and final-semester SE student.",
+    description: "Full-stack software engineer, co-founder, and final-semester SE student at Curtin University.",
     type: "website",
   },
 };

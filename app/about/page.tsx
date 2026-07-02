@@ -96,7 +96,7 @@ export default function AboutPage() {
             <span className="gradient-text">AI Enthusiast.</span>
           </h1>
           <p className="text-lg max-w-xl leading-relaxed mb-4" style={{ color: "#858EAD" }}>
-            Final-semester SE student with 5+ years of hands-on development experience.
+            Final-semester SE student at Curtin University with 5+ years of hands-on development experience.
           </p>
           <p className="flex items-center gap-1.5 text-sm" style={{ color: "#454C7A" }}>
             <MapPin size={14} style={{ color: "#858EAD" }} />
@@ -112,19 +112,17 @@ export default function AboutPage() {
             <SectionHeader title="My Story" />
             <div className="space-y-4 max-w-2xl" style={{ color: "#858EAD" }}>
               <p className="leading-relaxed">
-                Final-semester Software Engineering student with 5+ years of real-world software
-                development experience, from delivering 50+ client projects and co-founding a game
-                server to building Android applications, full-stack banking systems, UI/UX prototypes,
-                and enterprise compliance software.
+                I started writing code at 15, fascinated by how games worked after being a player. That
+                curiosity led me to co&#8209;found a FiveM multiplayer server at 17 with a player count of 200+
+                daily, where I taught myself Lua, SQL, and server architecture by building a real product —
+                not following tutorials. Within three years, I&apos;d delivered over 50 commissioned scripts to
+                clients worldwide.
               </p>
               <p className="leading-relaxed">
-                I also work closely with clients to apply AI to their businesses and workflows, helping
-                automate tasks, improve productivity, and make everyday work easier.
-              </p>
-              <p className="leading-relaxed">
-                I started writing code at 15, fascinated by how games worked under the hood — teaching
-                myself Lua, SQL, and server architecture by building real products, not following
-                tutorials. That self-driven foundation is what I bring to every project today.
+                Today, I&apos;m a final&#8209;semester Software Engineering student at Curtin University and a daily
+                user of AI development tools like Claude, Copilot, and Cursor — using them to accelerate
+                delivery without compromising quality. I&apos;m now looking for a graduate role where I can
+                contribute from day one.
               </p>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">

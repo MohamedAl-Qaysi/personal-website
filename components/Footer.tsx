@@ -22,7 +22,7 @@ export default function Footer() {
               Mohamed<span className="text-white">.</span>
             </p>
             <p className="text-sm mt-1" style={{ color: "#858EAD" }}>
-              AI-Augmented Software Engineer · Perth, WA
+              Software Engineer · Perth, WA
             </p>
           </div>
 

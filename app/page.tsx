@@ -137,7 +137,7 @@ export default function HomePage() {
               <HeroText />
 
               <p className="text-base sm:text-lg font-medium mb-6" style={{ color: "#1784F2" }}>
-                AI-Augmented Full-Stack Software Engineer
+                Full-Stack Software Engineer
               </p>
 
               <p className="text-base leading-relaxed mb-8 max-w-xl" style={{ color: "#858EAD" }}>
@@ -285,16 +285,17 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
               <div className="lg:col-span-3">
                 <p className="text-base leading-relaxed mb-4" style={{ color: "#858EAD" }}>
-                  I started writing code at 15, fascinated by how games worked under the hood. That curiosity
-                  turned into co-founding a FiveM multiplayer server at 17, where I taught myself Lua, SQL,
-                  and server architecture by building a real product — not tutorials. Within three years I&apos;d
-                  delivered 50+ commissioned scripts to clients worldwide.
+                  I started writing code at 15, fascinated by how games worked after being a player. That
+                  curiosity led me to co‑found a FiveM multiplayer server at 17 with a player count of 200+
+                  daily, where I taught myself Lua, SQL, and server architecture by building a real product —
+                  not following tutorials. Within three years, I&apos;d delivered over 50 commissioned scripts to
+                  clients worldwide.
                 </p>
                 <p className="text-base leading-relaxed mb-8" style={{ color: "#858EAD" }}>
-                  Today I&apos;m a final-semester SE student at Murdoch University and a daily user of AI
-                  development tools — Claude, Copilot, Cursor — using them to accelerate delivery without
-                  compromising quality. I&apos;m actively looking for a graduate role where I can contribute from
-                  day one.
+                  Today, I&apos;m a final‑semester Software Engineering student at Curtin University and a daily
+                  user of AI development tools like Claude, Copilot, and Cursor — using them to accelerate
+                  delivery without compromising quality. I&apos;m now looking for a graduate role where I can
+                  contribute from day one.
                 </p>
                 <Button href="/about">
                   Full Profile <ArrowRight size={15} />
